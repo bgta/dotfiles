@@ -1,6 +1,7 @@
 [user]
 	name = Raúl Romero García
 	email = raul@bgta.net
+	signingkey = B491F30D9D9617402D9A0B68F2DDE867E45D91BD
 [push]
 	default = simple
 
