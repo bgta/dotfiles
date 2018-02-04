@@ -1,0 +1,62 @@
+[user]
+	name = Raúl Romero García
+	email = raul@bgta.net
+	signingkey = B491F30D9D9617402D9A0B68F2DDE867E45D91BD
+[push]
+	default = simple
+
+[core]
+	editor = vi
+	precomposeunicode = true
+	autocrlf = input
+	ignorecase = false
+
+[color]
+	ui = true
+
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+
+[color "status"]
+	added = green
+	changed = yellow
+	untracked = cyan
+
+[apply]
+	# Detect whitespace errors when applying a patch
+	whitespace = fix
+
+[alias]
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	type = cat-file -t
+	dump = cat-file -p
+	graph = log --graph --pretty=oneline --abbrev-commit
+	amend = commit --amend --no-edit
+	
+	# Destroys all tracked and untracked changes
+	fire = "!f() { git reset --hard; git clean -f -d; }; f"
+	
+	# Deletes local merged branches except for master and develop
+	bclean = "!git branch --merged | grep -v \"*\" | grep -v master | grep -v develop | xargs -n 1 git branch -d"
+	
+	# Deletes local merged branches (bclean) and branches remote references to deleted branches
+	roomba = "!f() { git fetch --prune; git bclean ; }; f"
+	
+	# Commits current changes with a "WIP" message
+	wip = commit -a -m "WIP"
+
+	# Soft resets last commit (reverses the command wip)
+	unwip = reset --soft HEAD^
+
+	# List contributors with number of commits
+	contributors = shortlog --summary --numbered
+
+	# Prints the body of all commits since last tag (PR title when used with GitHub merge&squash)
+	changelog = "!f() { git describe --abbrev=0 --tags | xargs -I {} git log {}..HEAD --format=%s; }; f"
+
+	# Push tags and master after preparing a release
+	release = "!f() { git push --tags && git push origin master; }; f"
+[commit]
+	gpgsign = true
