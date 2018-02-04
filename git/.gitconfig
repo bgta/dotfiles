@@ -58,3 +58,5 @@
 
 	# Push tags and master after preparing a release
 	release = "!f() { git push --tags && git push origin master; }; f"
+[commit]
+	gpgsign = true
