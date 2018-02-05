@@ -60,3 +60,4 @@
 	release = "!f() { git flow release finish && git push --all && git push --tags; }; f"
 [commit]
 	gpgsign = true
+	template = /home/raul/.git_commit_template
