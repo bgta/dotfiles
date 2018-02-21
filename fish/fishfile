@@ -4,7 +4,10 @@ oh-my-fish/theme-bobthefish
 fisherman/fzf
 fisherman/getopts
 oh-my-fish/plugin-git-flow
+fisherman/git_porcelain
+fisherman/git_util
 fisherman/gitignore
 fisherman/nvm
+fisherman/rvm
 fisherman/spin
 oh-my-fish/plugin-z
