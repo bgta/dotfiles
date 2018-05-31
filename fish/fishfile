@@ -1,6 +1,7 @@
 oh-my-fish/plugin-archlinux
 edc/bass
 oh-my-fish/theme-bobthefish
+oh-my-fish/plugin-composer
 fisherman/fzf
 fisherman/getopts
 oh-my-fish/plugin-git-flow
@@ -11,4 +12,5 @@ fisherman/nvm
 laughedelic/pisces
 fisherman/rvm
 fisherman/spin
+oh-my-fish/plugin-sudope
 oh-my-fish/plugin-z
